@@ -1,0 +1,1 @@
+Verificar portas abertas no linux
