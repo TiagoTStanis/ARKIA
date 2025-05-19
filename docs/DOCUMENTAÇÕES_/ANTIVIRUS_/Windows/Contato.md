@@ -1,3 +1,0 @@
-Leonardo Berbert
-
-leonardo_berbert@trendmicro.com
