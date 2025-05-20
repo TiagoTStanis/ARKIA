@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:7
+    container_name: arkia_redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    restart: always
+
+  prometheus:
+    image: prom/prometheus
+    container_name: arkia_prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoramento/prometheus.yml:/etc/prometheus/prometheus.yml
+    restart: always
+
+  grafana:
+    image: grafana/grafana
+    container_name: arkia_grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
+    restart: always
+
+volumes:
+  redis_data:
+  grafana_data:
